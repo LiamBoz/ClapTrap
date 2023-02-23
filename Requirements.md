@@ -65,7 +65,9 @@ Bottle will be our web UI and routing.
 ```mermaid
 sequenceDiagram
   User->>WebUI: Go to web site
+  activate WebUI
   WebUI->>User: Present user's "timeline"
+  deactivate WebUI
 ```
 
 ### Rate a post
