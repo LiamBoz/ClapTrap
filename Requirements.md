@@ -65,8 +65,9 @@ Bottle will be our web UI and routing.
 ```mermaid
 sequenceDiagram
   User->>+WebUI: Go to web site
-  WebUI--x???: Does the WebUI service talk to any other services?
   WebUI->>-User: Present user's "timeline"
+  User--x???: Does the User talk to any other services?
+  WebUI--x???: Does the WebUI service talk to any other services?
 ```
 
 ### Rate a post
