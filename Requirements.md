@@ -62,6 +62,12 @@ Bottle will be our web UI and routing.
 
 ### Create Post
 
+```mermaid
+sequenceDiagram
+  User->WebUI: Go to web site
+  WebUI->User: Present user's "timeline"
+```
+
 ### Rate a post
 
 ### Comment on a post
