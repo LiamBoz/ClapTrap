@@ -64,8 +64,8 @@ Bottle will be our web UI and routing.
 
 ```mermaid
 sequenceDiagram
-  User->WebUI: Go to web site
-  WebUI->User: Present user's "timeline"
+  User->>WebUI: Go to web site
+  WebUI->>User: Present user's "timeline"
 ```
 
 ### Rate a post
