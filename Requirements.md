@@ -66,13 +66,25 @@ Bottle will be our web UI and routing.
 sequenceDiagram
   User->>+WebUI: Go to web site
   WebUI->>-User: Present user's "timeline"
-  User--x???: Does the User talk to any other services?
-  WebUI--x???: Does the WebUI service talk to any other services?
+  User-->>WebUI: Creates a Post
+  WebUI-->>Database: Stores post on database
+  Database-->>MicroService: Creates Post
+  MicroService-->>WebUI: Puts post on Web for others to see 
 ```
 
 ### Rate a post
 
+```mermaid
+sequenceDiagram
+    User->>-WebUI: Go to website
+    WebUI->>-User: Present user's "timeline"
+```
+
 ### Comment on a post
+
+```mermaid
+    sequenceDiagram
+```
 
 ### Read someone else's posts
 
