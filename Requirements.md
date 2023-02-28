@@ -72,7 +72,7 @@ sequenceDiagram
   User-->>WebUI: Goes to user home page
 
   WebUI-->>Meta: Get/Query the less active Storage service
-  Meta-->WebUI: Least used Storage
+  Meta-->>WebUI: Least used Storage
 
   WebUI-->>User: User's home page
 
