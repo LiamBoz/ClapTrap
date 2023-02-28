@@ -39,7 +39,10 @@ Tech: `bottle.py` is our main tool here
 
 #### STORAGE SERVICE
 
-#### 
+#### Meta Service
+
+Its job is to know the status and state of all services and provide
+information on such to any client.
 
 #### OTHER SERVICE ??
 
@@ -64,13 +67,22 @@ Bottle will be our web UI and routing.
 
 ```mermaid
 sequenceDiagram
-  User->>+WebUI: Go to web site
-  WebUI->>-User: Present user's "timeline"
-  User-->>WebUI: Creates a Post
-  WebUI-->>Database: Stores post on database
-  Database-->>MicroService: Creates Post
-  MicroService-->>WebUI: Puts post on Web for others to see 
+  User-->>Meta: Go to Meta
+  Meta-->>User: Redirects to a WebUI
+  User-->>WebUI: Goes to user home page
+
+  WebUI-->>Meta: Get/Query the less active Storage service
+  Meta-->WebUI: Least used Storage
+
+  WebUI-->>User: User's home page
+
+  User-->>Storage: User presses "Save Post" button
+
 ```
+
+WebUI-->>Storage: Stores post on database
+Storage-->>MicroService: Creates Post
+MicroService-->>WebUI: Puts post on Web for others to see 
 
 ### Rate a post
 
