@@ -69,12 +69,13 @@ Bottle will be our web UI and routing.
 sequenceDiagram
   User-->>Meta: Go to Meta
   Meta-->>User: Redirects to a WebUI
-  User-->>WebUI: Goes to user home page
+
+  User->>+WebUI: Goes to user home page
 
   WebUI-->>Meta: Get/Query the less active Storage service
   Meta-->>WebUI: Least used Storage
 
-  WebUI-->>User: User's home page
+  WebUI->>-User: User's home page
 
   User-->>Storage: User presses "Save Post" button
 
