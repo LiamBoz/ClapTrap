@@ -1,9 +1,9 @@
 # ClapTrap
 
-## WebUI Service
+`ClapTrap` is to be a clone -- though better of course! -- of Twitter.
 
 ## API
 
-### `a/b/c`
+### `<USER>/timeline`
 
-### `d/e/f`
+This route takes the user to their timeline.
