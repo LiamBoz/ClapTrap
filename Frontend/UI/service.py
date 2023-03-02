@@ -5,8 +5,10 @@ timeline_tmpl = """
 
 <p>Make a Post</p>
 
-<textarea>Enter post test here</textarea>
-<form action="???"><submit /></form>
+<form action="http://localhost:7591/" method="post">
+  <p><textarea name="clap">Enter post test here</textarea></p>
+  <input type="submit" value="Clap Back!" />
+</form>
 
 <hr />
 
@@ -23,6 +25,8 @@ Date: <b>DATE</b>
 <p>Previous Previous post here</p>
 </div>
 """
+
+# @post("???/???/???")
 
 @route('/<user>/timeline')
 def timeline(user):
