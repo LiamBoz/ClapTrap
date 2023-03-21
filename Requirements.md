@@ -95,7 +95,7 @@ sequenceDiagram
 
   User-->>WebMS: Get (<user>/timeline) - User goes to their timeline @ the WebUI MS.
 
-  WebMS<<-->>Storage: Get - The WebUI MS goes to the storage - MS to get the users previous claps.
+  WebMS-->>Storage: Get - The WebUI MS goes to the storage - MS to get the users previous claps.
 
 ```
 test
