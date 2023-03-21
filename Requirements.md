@@ -107,7 +107,7 @@ sequenceDiagram
 
   User->>WebMS: (2) Get (<user>/timeline)
 
-  WebMS->>-Storage: (3) Get 
+  WebMS->>Storage: (3) Get 
 
   Storage-->>User: (redirect)
 
