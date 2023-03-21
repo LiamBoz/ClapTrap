@@ -44,6 +44,8 @@ Tech: `bottle.py` is our main tool here
 Its job is to know the status and state of all services and provide
 information on such to any client.
 
+#### 
+
 #### OTHER SERVICE ??
 
 
@@ -85,12 +87,20 @@ WebUI-->>Storage: Stores post on database
 Storage-->>MicroService: Creates Post
 MicroService-->>WebUI: Puts post on Web for others to see 
 
+### Sequence Diagram
+```mermaid
+sequenceDiagram
+  User->>-Storage: Post (<user>/timeline) - The user makes a new clapback which is sent to the storage microservice. The storage MS redirects back to the users timeline.
+  User-->>Web MicroService: Get (<user>/timeline) - User goes to their timeline @ the WebUI MS.
+  Web MicroService<<-->>Storage: Get - The WebUI MS goes to the storage - MS to get the users previous claps.
+```
+
 ### Rate a post
 
 ```mermaid
 sequenceDiagram
-    User->>-WebUI: Go to website
-    WebUI->>-User: Present user's "timeline"
+    User-->>WebUI: Go to website
+    WebUI-->>User: Present user's "timeline"
 ```
 
 ### Comment on a post
