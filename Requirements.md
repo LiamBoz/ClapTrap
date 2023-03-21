@@ -96,12 +96,12 @@ sequenceDiagram
   StorageMS->>WebMS: Returns previous claps
   WebMS->>-User: Returns the user's timeline HTML page
 
-  User->>+StorageMS: Posts a clap
+  User->>StorageMS: Posts a clap
   StorageMS->>User: Return a redirect to the user's timeline
   User->>WebMS: Get user's timeline
   WebMS->>StorageMS: Get previous claps
   StorageMS->>WebMS: Returns previous claps
-  WebMS->>-User: Returns the user's timeline HTML page
+  WebMS->>User: Returns the user's timeline HTML page
 
   User->>Storage: (1) Post (<user>/timeline)
 
