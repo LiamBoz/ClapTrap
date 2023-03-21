@@ -88,11 +88,15 @@ Storage-->>MicroService: Creates Post
 MicroService-->>WebUI: Puts post on Web for others to see 
 
 ### Sequence Diagram
+
 ```mermaid
 sequenceDiagram
   User->>-Storage: Post (<user>/timeline) - The user makes a new clapback which is sent to the storage microservice. The storage MS redirects back to the users timeline.
+
   User-->>Web MicroService: Get (<user>/timeline) - User goes to their timeline @ the WebUI MS.
+  
   Web MicroService<<-->>Storage: Get - The WebUI MS goes to the storage - MS to get the users previous claps.
+
 ```
 
 ### Rate a post
