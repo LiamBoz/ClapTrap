@@ -22,7 +22,7 @@ def insert(user, text):
 
 @route('/<user>/timeline')
 def get_post(user):
-    return DB[user]
+    return {"data": DB[user]}
 
 
 

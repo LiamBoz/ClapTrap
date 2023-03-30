@@ -43,7 +43,7 @@ def timeline(user):
       claps_from_db = response_object.json()
 
       claps_as_html = ""
-      for clap in claps_from_db:
+      for clap in claps_from_db["data"]:
           claps_as_html += table_tmpl.format(
               **{"user": user, "likes": clap[2], "date": clap[1], "text": clap[0]}
             )
