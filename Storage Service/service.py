@@ -1,5 +1,6 @@
 import sqlite3
-from bottle import route, request, run
+from bottle import route, request, run, redirect
+from time import ctime
 
 conn = sqlite3.connect('data.db')
 c = conn.cursor()
@@ -8,19 +9,20 @@ c.execute('''
             ''')
 
 
+
+
+
 DB = {}
 def insert(user, text):
     if not user in DB:
         DB[user] = []
-    DB[user].insert(0, text)
+    DB[user].insert(0, [text,ctime(),0])
 
 
 
 @route('/<user>/timeline')
 def get_post(user):
-
-
-    return str(DB[user])
+    return DB[user]
 
 
 
@@ -33,9 +35,9 @@ def create_post(user):
     #c.execute("(post_text)", (post_text))
     #conn.commit()
     
-    return {'message': 'Post created successfully'}
+    redirect(request.headers.get("Referer")+f"{user}/timeline")
 
-run(host='localhost', port=7591)
+run(host='127.0.0.1', port=7591)
 
 
 
